@@ -7,37 +7,117 @@
 
 int main() {
     // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
+  
+    // Carta 1
+    char estado1;
+    char codigo1[4];
+    char cidade1[50];
+    int populacao1;
+    float area1;
+    float pib1;
+    int pontosTuristicos1;
+    float densidadePopulacional1;
+    float pibPerCapita1;
+    char *cidadeVencedora;
+
+    // Carta 2
+    char estado2;
+    char codigo2[4];
+    char cidade2[50];
+    int populacao2;
+    float area2;
+    float pib2;
+    int pontosTuristicos2;
+    float densidadePopulacional2;
+    float pibPerCapita2;
 
     
     // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+   
+    printf(" *** Cadastro da Carta 1 *** \n");
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+    printf("Estado (A-H): \n");
+    scanf(" %c", &estado1);
+
+    printf("Código: \n");
+    scanf("%s", codigo1);
+
+    printf("Nome da Cidade: \n");
+    scanf("%s", cidade1);
+
+    printf("População: \n");
+    scanf("%d", &populacao1);
+
+    printf("Área: \n");
+    scanf("%f", &area1);
+
+    printf("PIB: \n");
+    scanf("%f", &pib1);
+
+    printf("Número de Pontos Turísticos: \n");
+    scanf("%d", &pontosTuristicos1);
+
+
+    printf(" *** Cadastro da Carta 2 ***\n");
+
+    printf("Estado (A-H): \n");
+    scanf(" %c", &estado2);
+
+    printf("Código: \n");
+    scanf("%s", codigo2);
+
+    printf("Nome da cidade: \n");
+    scanf("%s", cidade2);
+
+    printf("População: \n");
+    scanf("%d", &populacao2);
+
+    printf("Área: \n");
+    scanf("%f", &area2);
+
+    printf("PIB: \n");
+    scanf("%f", &pib2);
+
+    printf("Número de Pontos Turísticos: \n");
+    scanf("%d", &pontosTuristicos2);
+
+    /*
+    %d: Imprime um inteiro no formato decimal.
+    %f: Imprime um número de ponto flutuante no formato padrão.
+    %c: Imprime um único caractere.
+    %s: Imprime uma cadeia (string) de caracteres.
+    */
+
+    // Área para os cálculos
+    densidadePopulacional1 = (float)populacao1 / area1;
+    pibPerCapita1 = pib1 / populacao1;
+
+    densidadePopulacional2 = (float)populacao2 / area2;
+    pibPerCapita2 = pib2 / populacao2;
+
 
     // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+    // Comparação usando if/else (Atributo: Área)
+    // Regra da Área: O maior valor vence
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+    printf("Comparação de cartas (Atributo: Área)\n");
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+    // Exibe os valores comparados
+    printf("Carta 1 - %s: %f\n", cidade1, area1);
+    printf("Carta 2 - %s: %f\n", cidade2, area2);
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+        if (area1 > area2) {
+            cidadeVencedora = cidade1;
+            printf("Cidade 1 tem maior área.\n");
+        } else {
+            cidadeVencedora = cidade2;
+            printf("Cidade 2 tem maior área.\n");
+        }
+
+            printf("A cidade vencedora é: %s.\n", cidadeVencedora);
 
     return 0;
 }
+
+
+
